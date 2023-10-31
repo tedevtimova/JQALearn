@@ -17,7 +17,7 @@ public class AnimalDemo {
         cat.eat();
         cat.makeSomeNoise();
         cat.play();
-        cat.play(cat,5);
+        cat.play(5);
 
         System.out.println();
 

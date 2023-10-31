@@ -21,8 +21,9 @@ public class Cat extends Animal{
     void play(){
         System.out.println("Show me a tree!");
     }
-    void play(Cat a, int z) {
-        System.out.println(a.name + " climbed on " + a.climb(z) + " trees today");
+    void play(int z)
+    {
+        System.out.println(this.name + " climbed on " + this.climb(z) + " trees today");
     }
 
   int climb (int x){
