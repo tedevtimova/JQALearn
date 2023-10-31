@@ -26,6 +26,7 @@ public class AnimalDemo {
 
         bird.eat();
         bird.makeSomeNoise();
+        bird.play();
         bird.sync(bird2);
         bird.sync(bird,bird2);
 
