@@ -40,14 +40,14 @@ public class FirstTestCase {
         List<WebElement> list = driver.findElements(By.xpath("//input[@name='tool']"));
 
         Actions act = new Actions(driver);
-        for (int i = 0; i < list.size(); i++) {
+
             act.keyDown(Keys.CONTROL)
                     .click(list.get(0))
                     .click(list.get(2))
                     .keyUp(Keys.CONTROL)
                     .build()
                     .perform();
-        }
+
         //8. Select Continent (Select box).
         driver.findElement(By.cssSelector("#continents>:nth-child(1)")).click();
         //9. Select multiple commands from a multi-select box.
