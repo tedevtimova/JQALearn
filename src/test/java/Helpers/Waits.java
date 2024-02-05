@@ -12,7 +12,7 @@ public class Waits {
     }
 
     public static WebDriverWait getExplicitWait(WebDriver driver){
-        return new WebDriverWait(driver,3);
+        return new WebDriverWait(driver,4);
         
     }
 }
