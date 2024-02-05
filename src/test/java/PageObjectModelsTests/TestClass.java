@@ -1,22 +1,25 @@
 package PageObjectModelsTests;
 
 import Helpers.BrowserFactory;
+import Helpers.StartCloseBrowser;
+import Helpers.Waits;
 import PageObjectModels.PageOne;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class TestClass extends BrowserFactory {
+public class TestClass extends StartCloseBrowser {
 
-    @org.junit.Test
+    @Test
 
-    public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = TestClass.openBrowser("chrome");
+    public void test(){
+
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html?m=1");
-        Thread.sleep(1000);
+        Waits.implicitWait(driver);
 
         PageOne pageone = new PageOne(driver);
-        pageone.acceptCookiies();
+        pageone.acceptCookies();
 
         pageone.enterFirstName("Teddy");
         Assert.assertEquals("Teddy",pageone.getNameValue());
@@ -48,7 +51,7 @@ public class TestClass extends BrowserFactory {
         Assert.assertTrue(pageone.verifyAutomationCheckboxesOne());
         Assert.assertTrue(pageone.verifyAutomationCheckboxesTwo());
 
-        pageone.uploadFile("C://Users//TeodoraEvtimova//Desktop//first name css selector.png");
+        pageone.uploadFile("C://Users//TeodoraEvtimova//Desktop//Wallpapers//1wallpaperflare.com_wallpaper.jpg");
 
     }
 

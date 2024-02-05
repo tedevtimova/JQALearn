@@ -1,6 +1,8 @@
 package Helpers;
 
+import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +14,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class BrowserFactory {
     public static WebDriver driver;
 
- @BeforeClass
     public static WebDriver openBrowser(String browsername){
 
      if(browsername.equalsIgnoreCase("chrome")){
@@ -36,8 +37,7 @@ public class BrowserFactory {
     return driver;
 
  }
-    @AfterClass
-    public void closeBrowser(){
+    public static void closeBrowser(){
     driver.close();
     }
 

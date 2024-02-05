@@ -1,31 +1,34 @@
 package PageObjectModels;
 
-import org.junit.Assert;
+import Helpers.Waits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PageOne {
 
     WebDriver driver;
+
+    //constructor
 
     public PageOne(WebDriver driver){
         this.driver = driver;
     }
     //accept cookies
        By acceptcookies = By.xpath("//button[@id='ez-accept-necessary']");
-    public void acceptCookiies(){
+    public void acceptCookies(){
+
+        Waits.getExplicitWait(driver).until(ExpectedConditions.elementToBeClickable(acceptcookies));
         driver.findElement(acceptcookies).click();
+
     }
     //find first name
     By firstname = By.name("firstname");
     public void enterFirstName(String fname){
+        Waits.getExplicitWait(driver).until(ExpectedConditions.elementToBeClickable(firstname));
         driver.findElement(firstname).sendKeys(fname);
     }
     //get text entered in First name field
