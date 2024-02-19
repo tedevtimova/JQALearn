@@ -1,12 +1,13 @@
 Feature: Login functionality  
 
-Scenario:
+Scenario: Successful login
+
 Given the user is at the login page
 When the user enters "standard_user" as username and "secret_sauce" as password
 And clicks on the login button
 Then they should be redirected to the Products page
 
-Scenario:
+Scenario:Unsuccessful login
 
 Given the user is at the login page
 When the user enters "user" as username and "test" as password
